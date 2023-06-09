@@ -4,7 +4,7 @@ import {
     CssBaseline,
 } from '@mui/material';
 
-import { LoanRequestContainer } from './load-request';
+import { LoanRequestContainer } from './loan-request';
 
 export default () => {
     return (

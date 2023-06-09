@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { LoanRequestForm } from "./LoadRequestForm"
+import { LoanRequestForm } from "./LoanRequestForm"
 import { LoanRequestResult } from './LoanRequestResult';
 import { NEW_LOAN_ENDPOINT } from "../endpoints.const";
 
@@ -27,6 +27,12 @@ export const LoanRequestContainer = () => {
             .then(res => (
                 setReqRes(res.data)
             ))
+            .catch(e => {
+                setReqRes({
+                    status: 'error',
+                    message: 'Dados invalidos.',
+                })
+            });
             
     }
 
@@ -47,6 +53,11 @@ export const LoanRequestContainer = () => {
             message: reqRes?.message,
             buttonText: 'Fechar',
         },
+        error: {
+            title: 'Erro',
+            message: reqRes?.message,
+            buttonText: 'Tentar novamente',
+        }
     }
 
     return (

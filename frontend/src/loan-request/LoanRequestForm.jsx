@@ -88,7 +88,7 @@ export const LoanRequestForm = ({ handleSubmit }) => {
     const onSubmit = useCallback(e => {
         e.preventDefault();
         handleSubmit(values)
-    }, [values]);
+    }, [values, handleSubmit]);
 
     return (
         <>
@@ -122,6 +122,7 @@ export const LoanRequestForm = ({ handleSubmit }) => {
                             id="name"
                             label={labels.name[selectedDoc]}
                             name="name"
+                            InputProps={{maxlength: 100, minlength: 3}}
                             value={values?.name}
                             onChange={handleValueChange}
                         />

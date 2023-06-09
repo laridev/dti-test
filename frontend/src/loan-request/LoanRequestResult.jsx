@@ -24,7 +24,7 @@ export const LoanRequestResult = ({
     open,
     onClose
 }) => (
-    <Modal open={open} onclose={onClose}>
+    <Modal open={open} onClose={onClose}>
         <Box sx={style}>
             <h2>{title}</h2>
             <Typography>
